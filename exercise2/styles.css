@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+.panel-content,
+.tab-pane {
+    padding: 1em;
+}
+.nav-tabs {
+    overflow-y: hidden;
+}
+
+/* Display accordion/tabs interchangeably based on device resolution
+Mobile screen resolution (max-width: 600px) */
+
+#accordion {
+    display: none;
+}
+#tabs {
+    display: block;
+}
+
+@media only screen and (max-width: 600px) {
+    #accordion {
+        display: block;
+    }
+    #tabs {
+        display: none;
+    }
+}

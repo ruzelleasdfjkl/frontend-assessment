@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frontend Assessment (Exercise 2)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+
+  <body>
+    <!-- Accordion display -->
+    <div id="accordion">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse1" id="accordion1-title"></a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in" data-parent="#accordion">
+            <div class="panel-content" id="accordion1-content"></div>
+          </div>
+
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse2" id="accordion2-title"></a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse" data-parent="#accordion">
+            <div class="panel-content" id="accordion2-content"></div>
+          </div>
+
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse3" id="accordion3-title"></a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse" data-parent="#accordion">
+            <div class="panel-content" id="accordion3-content"></div>
+          </div>
+
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse4" id="accordion4-title"></a>
+            </h4>
+          </div>
+          <div id="collapse4" class="panel-collapse collapse" data-parent="#accordion">
+            <div class="panel-content" id="accordion4-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Accordion display -->
+
+    <!-- Tabs display -->
+    <div id="tabs" role="tabpanel">
+        <!-- Navigation tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab" id="tab1-title"></a></li>
+            <li><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab" id="tab2-title"></a></li>
+            <li><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab" id="tab3-title"></a></li>
+            <li><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab" id="tab4-title"></a></li>
+        </ul>
+
+        <!-- Tab contents -->
+        <div class="tab-content" style="padding-top: 20px">
+            <div role="tabpanel" class="tab-pane active" id="tab1"></div>
+            <div role="tabpanel" class="tab-pane" id="tab2"></div>
+            <div role="tabpanel" class="tab-pane" id="tab3"></div>
+            <div role="tabpanel" class="tab-pane" id="tab4"></div>
+        </div>
+    </div>
+    <!-- End of Tabs display -->
+
+    <script>
+      let data = [
+        {
+          "title": "Section 1",
+          "content": "<p>Maecenas nec semper ante, pellentesque posuere lorem. Nullam ipsum massa, consequat eget urna ut, pulvinar dignissim lorem. Nulla facilisi. Nam mattis eleifend metus. Fusce at commodo lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus pellentesque elit sem, vel blandit posuere.</p>"
+        },
+        {
+          "title": "Section 2",
+          "content": "<p>Mauris a orci sodales, scelerisque velit vitae, gravida nisl. Ut non laoreet eros, vel laoreet nisi. Praesent sed dolor dui. Proin non fringilla quam. Aliquam erat volutpat. Vestibulum vel arcu semper, lobortis turpis ac, ultricies nisi. Praesent id.</p>"
+        },
+        {
+          "title": "Section 3",
+          "content": "<p>Sed elementum sapien ut sapien imperdiet, eu venenatis enim rhoncus. Praesent euismod tincidunt rhoncus. Duis cras amet:</p><ul><li>List item one</li><li>List item two</li><li>List item three</li></ul>"
+        },
+        {
+          "title": "Section 4",
+          "content": "<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est.</p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>"
+        }
+      ];
+
+      for (var i = 0; i < data.length; i++) {
+          document.getElementById("accordion" + (i+1) + "-title").innerHTML = data[i].title;
+          document.getElementById("accordion" + (i+1) + "-content").innerHTML = data[i].content;
+          document.getElementById("tab" + (i+1) + "-title").innerHTML = data[i].title;
+          document.getElementById("tab" + (i+1)).innerHTML = data[i].content;
+      }
+    </script>
+  </body>
+</html
